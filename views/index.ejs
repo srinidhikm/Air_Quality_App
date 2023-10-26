@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <title>Today's Air Quality</title>
+</head>
+
+<% let level=6;
+    let bodyClass="body"+level; %>
+<%if (content) { %>
+    <% const data = JSON.parse(content)
+    level = data.level;
+    bodyClass="body"+level }%>
+
+<body id="<%= bodyClass %>">
+
+    <div class="container mt-5 p-4 text-center mainBody">
+        <div>
+            <form action="/submit" method="POST">
+                <input type="text" name="location" placeholder="Enter city or country" />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="mt-2 p-3 pb-0 mainData">
+            <% if (errorMessage) { %>
+                <h3><%= errorMessage %></h3>
+            <% } else if (content) { %>
+                <% const data = JSON.parse(content)
+                level = data.level %>
+                <h2><%= data.location %></h2>
+                <div class="aqiCircle"><span class="aqi" style="display: block;"><sub class="mt-4" style="display: block; font-size: small;">AQI</sub><%= data.aqi %><sup class="mt-2" style="display: block; font-size: large;"><%= data.severity %></sup></span></div>
+                <div class="mt-4 pt-2 levels">
+                    <table class="custom-table m-0 p-0">
+                        <tr>
+                            <td>Co - <%= data.co %></td>
+                            <td>No2 - <%= data.no2 %></td>
+                        </tr>
+                        <tr>
+                            <td>O3 - <%= data.o3 %></td>
+                            <td>So2 - <%= data.so2 %></td>
+                        </tr>
+                        <tr>
+                            <td style="border-bottom: none;">PM2.5 - <%= data.pm25 %></td>
+                            <td style="border-bottom: none;">PM10 - <%= data.pm10 %></td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            <% } %>
+        </div>
+    
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

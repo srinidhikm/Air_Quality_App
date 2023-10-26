@@ -1,0 +1,149 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+#body6
+{
+    background-color: #d6e4e7;; 
+}
+
+#body0
+{
+    background-color: rgb(116, 226, 43);
+}
+#body1
+{
+    background-color: #FFFF00;
+}
+#body2
+{
+    background-color: #FF7E00;
+}
+#body3
+{
+    background-color: #FF0000;
+}
+#body4
+{
+    background-color: #7c2c43;
+}
+#body5
+{
+    background-color: #7E0023;
+}
+
+.mainBody
+{
+    background-color: rgba(0, 0, 0, 0.075);
+    border-radius: 25px 25px 25px 25px;
+    box-shadow:
+            5px 5px 30px rgba(255, 255, 255, 0.541),
+            -5px 5px 30px rgba(255, 255, 255, 0.199), 
+            5px -5px 30px rgba(255, 255, 255, 0.199), 
+            -5px -5px 30px rgba(255, 255, 255, 0.199);
+    max-width: fit-content;
+    padding: 50px;
+}
+
+.mainData
+{
+    color: white;
+    border-radius: 3px 3px 3px 3px;
+
+}
+
+input[type="text"]
+{
+    border-radius: 25px 0 0 25px; /* Top-left, bottom-left, top-right, bottom-right */
+    padding: 10px;
+    width: 265px;
+    background-color: white;
+    border: none;
+    text-align: center;
+}
+
+input[type="text"]:focus {
+    outline: none;
+  }
+
+button
+{
+    padding: 10px;
+    border-radius: 0 25px 25px 0;
+    width: 70px;
+    background-color: white;
+    border: none;
+}
+
+.aqiCircle
+{
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid white;
+    text-align: center;
+    box-shadow: 0 0 10px white;
+}
+
+.aqi
+{
+    padding: 0;
+    margin: 0;
+    font-size: 50px;
+}
+
+.levels
+{
+    
+    box-sizing: border-box;
+    border-top: 2px solid rgba(255, 255, 255, 0.603);
+}
+
+
+.custom-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.custom-table td {
+    padding: 10px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.479); /* White border at the bottom */
+    padding: 10px;
+    text-align: left; /* Left-aligned text */
+}
+
+
+@media screen and (max-width: 379px) {
+    input[type="text"]
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 25px 25px 25px 25px; /* Top-left, bottom-left, top-right, bottom-right */
+    padding: 10px;
+    width: 265px;
+    background-color: white;
+    border: none;
+}
+
+
+  button
+{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 25px 25px 25px 25px;
+    width: 70px;
+    background-color: white;
+    border: none;
+}
+
+}
+
